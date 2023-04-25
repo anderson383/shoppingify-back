@@ -1,7 +1,5 @@
-import {ShoppingCarHistory} from "../model/ShoppingCarHistory";
-
+import { ShoppingCarHistory } from '../model/ShoppingCarHistory';
 
 export abstract class DaoShoppingCar {
-  abstract listHistoryShoppingCar():Promise<ShoppingCarHistory[]>
-
+  abstract listHistoryShoppingCar(): Promise<ShoppingCarHistory[]>;
 }

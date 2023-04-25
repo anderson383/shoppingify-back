@@ -1,17 +1,15 @@
+import { PrimaryGeneratedColumn, Entity, Column, OneToMany } from 'typeorm';
+import { BaseEntity } from '../../base/entity/base.entity';
+import { ProductEntity } from '../../product/entity/product.entity';
 
-import {PrimaryGeneratedColumn, ManyToOne, Entity, Column, OneToMany} from 'typeorm'
-import {BaseEntity} from "../../base/entity/base.entity";
-import {ProductEntity} from "../../product/entity/product.entity";
-
-@Entity({name: 'Category'})
+@Entity({ name: 'Category' })
 export class CategoryEntity extends BaseEntity {
-
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  id: string;
 
   @Column()
-  name: string
+  name: string;
 
-  @OneToMany(_type => ProductEntity, task => task.category, { eager: true })
-  products: ProductEntity[]
+  @OneToMany((_type) => ProductEntity, (task) => task.category, { eager: true })
+  products: ProductEntity[];
 }

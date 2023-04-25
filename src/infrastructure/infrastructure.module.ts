@@ -1,19 +1,17 @@
-import {Module} from "@nestjs/common";
+import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import {dataBaseConfigFactory} from "./config/data-base.config";
-import {ConfigModule, ConfigService} from "@nestjs/config";
-import Joi from "joi";
-import {NodeEnv} from "./config/env/node-env.enum";
-import {ProductModule} from "./product/product.module";
-import {CategoryModule} from "./category/category.module";
-import {ProductShopppingCarModule} from "./product-shopping-car/product-shoppping-car.module";
-import {ShoppingCarModule} from "./shopping-car/shopping-car.module";
+import { dataBaseConfigFactory } from './config/data-base.config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ProductModule } from './product/product.module';
+import { CategoryModule } from './category/category.module';
+import { ProductShopppingCarModule } from './product-shopping-car/product-shoppping-car.module';
+import { ShoppingCarModule } from './shopping-car/shopping-car.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: dataBaseConfigFactory,
-      inject: [ConfigService]
+      inject: [ConfigService],
     }),
     ConfigModule.forRoot({
       isGlobal: true,
@@ -27,7 +25,7 @@ import {ShoppingCarModule} from "./shopping-car/shopping-car.module";
     ProductModule,
     CategoryModule,
     ShoppingCarModule,
-    ProductShopppingCarModule
-  ]
+    ProductShopppingCarModule,
+  ],
 })
 export class InfrastructureModule {}

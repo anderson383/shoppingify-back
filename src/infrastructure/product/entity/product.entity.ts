@@ -1,32 +1,39 @@
+import { ProductShoppingCarEntity } from './../../product-shopping-car/entity/ProductShoppingCar.entity';
+import {
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  Column,
+  Entity,
+  OneToMany,
+} from 'typeorm';
+import { BaseEntity } from '../../base/entity/base.entity';
+import { CategoryEntity } from '../../category/entity/category.entity';
 
-import {PrimaryGeneratedColumn, ManyToOne, Column, Entity} from 'typeorm'
-import {BaseEntity} from "../../base/entity/base.entity";
-import {CategoryEntity} from "../../category/entity/category.entity";
-import {JoinColumn} from "typeorm/browser";
-
-@Entity({name: 'Product'})
+@Entity({ name: 'Product' })
 export class ProductEntity extends BaseEntity {
-
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  id: string;
 
   @Column()
-  name: string
+  name: string;
 
   @Column({
     nullable: true,
-    type: 'text'
+    type: 'text',
   })
-  note: string
+  note: string;
 
   @Column({
     nullable: true,
-    type: 'text'
+    type: 'text',
   })
-  image: string
+  image: string;
 
+  @ManyToOne((type) => CategoryEntity)
+  category: CategoryEntity;
 
-  @ManyToOne(type => CategoryEntity)
-  category: CategoryEntity
-
+  @OneToMany((_type) => ProductShoppingCarEntity, (task) => task.product, {
+    eager: true,
+  })
+  list_history: ProductShoppingCarEntity[];
 }

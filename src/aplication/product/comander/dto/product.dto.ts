@@ -1,16 +1,16 @@
-import {IsNotEmpty, IsEmpty} from "class-validator";
-import {CategoryEntity} from "../../../../infrastructure/category/entity/category.entity";
+import { IsNotEmpty, IsEmpty } from 'class-validator';
+import { CategoryEntity } from '../../../../infrastructure/category/entity/category.entity';
 
 export class ProductDto {
   @IsNotEmpty()
-  name: string
+  name: string;
 
   @IsEmpty()
-  note: string
+  note: string;
 
   @IsEmpty()
-  image: string
+  image: string;
 
   @IsNotEmpty()
-  category: CategoryEntity
+  category: CategoryEntity;
 }

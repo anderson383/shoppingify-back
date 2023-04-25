@@ -1,13 +1,10 @@
-import {Module} from "@nestjs/common";
-import {ShoppingCarProvierModule} from "./provider/ShoppingCarProvier.module";
-import {ShoppingCarController} from "./controllers/shopping-car.controller";
-
+import { Module } from '@nestjs/common';
+import { ShoppingCarProvierModule } from './provider/ShoppingCarProvier.module';
+import { ShoppingCarController } from './controllers/shopping-car.controller';
 
 @Module({
-  controllers: [
-    ShoppingCarController
-  ],
+  controllers: [ShoppingCarController],
   imports: [ShoppingCarProvierModule],
-  exports: [ShoppingCarProvierModule]
+  exports: [ShoppingCarProvierModule],
 })
 export class ShoppingCarModule {}

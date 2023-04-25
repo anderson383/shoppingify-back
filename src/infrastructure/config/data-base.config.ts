@@ -1,6 +1,5 @@
-import { ConfigService } from '@nestjs/config'
-import {config} from "rxjs";
-import {EnvVariables} from "./env/env-variables.enum";
+import { ConfigService } from '@nestjs/config';
+import { EnvVariables } from './env/env-variables.enum';
 
 export const dataBaseConfigFactory = (configService: ConfigService) => ({
   type: configService.get(EnvVariables.DATABASE_TYPE),
@@ -12,11 +11,13 @@ export const dataBaseConfigFactory = (configService: ConfigService) => ({
 
   entities: [configService.get(EnvVariables.TYPEORM_ENTITIES_DIR)],
   synchronize: true,
+  logging: true,
 
-  migrationsTableName: configService.get(EnvVariables.TYPEORM_MIGRATIONS_TABLENAME),
+  migrationsTableName: configService.get(
+    EnvVariables.TYPEORM_MIGRATIONS_TABLENAME,
+  ),
   migrations: [configService.get(EnvVariables.TYPEORM_MIGRATIONS_DIR)],
   cli: {
     migrationsDir: configService.get(EnvVariables.TYPEORMCLI_MIGRATIONS_DIR),
   },
-
-})
+});

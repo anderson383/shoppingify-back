@@ -1,22 +1,19 @@
-
-import {Column, PrimaryGeneratedColumn} from 'typeorm'
+import { Column, PrimaryGeneratedColumn } from 'typeorm';
 
 export class BaseEntity {
-
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  id: string;
 
   @Column({
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
   })
-  create_date: Date
+  create_date: Date;
 
   @Column({
     nullable: false,
     default: () => 'CURRENT_TIMESTAMP',
-    onUpdate: 'NOW()'
+    onUpdate: 'NOW()',
   })
-  update_date: Date
-
+  update_date: Date;
 }

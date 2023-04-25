@@ -1,10 +1,9 @@
-import {IsEmpty} from "class-validator";
-
+import { IsEmpty } from 'class-validator';
 
 export class CategoryListDto {
   @IsEmpty()
-  id: string
+  id: string;
 
   @IsEmpty()
-  name: string
+  name: string;
 }

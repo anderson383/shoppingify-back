@@ -1,11 +1,10 @@
-import {ProductEntity} from "../../../../infrastructure/product/entity/product.entity";
-import {IsEmpty} from "class-validator";
-
+import { ProductEntity } from '../../../../infrastructure/product/entity/product.entity';
+import { IsEmpty } from 'class-validator';
 
 export class CategoryListProductDto {
   @IsEmpty()
-  name: string
+  name: string;
 
   @IsEmpty()
-  products: ProductEntity[]
+  products: ProductEntity[];
 }
