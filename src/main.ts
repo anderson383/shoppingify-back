@@ -13,10 +13,10 @@ async function bootstrap() {
   app.enableCors();
 
   app.setGlobalPrefix(configService.get(EnvVariables.APPLICATION_CONTEXT_PATH));
-  await app.listen(configService.get(EnvVariables.APPLICATION_PORT));
+  await app.listen(configService.get(EnvVariables.PORT) || '3000', '0.0.0.0');
   console.log(
     'listen port in ',
-    configService.get(EnvVariables.APPLICATION_PORT),
+    configService.get(EnvVariables.PORT || '3000'),
   );
 }
 bootstrap();
