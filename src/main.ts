@@ -10,7 +10,13 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new TransformInterceptor());
-  app.enableCors();
+  app.enableCors({
+    origin: ['http://localhost:3000', 'https://ander-shopping.netlify.app'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true,
+  });
 
   app.setGlobalPrefix(configService.get(EnvVariables.APPLICATION_CONTEXT_PATH));
   await app.listen(configService.get(EnvVariables.APPLICATION_PORT));
