@@ -20,4 +20,7 @@ export const dataBaseConfigFactory = (configService: ConfigService) => ({
   cli: {
     migrationsDir: configService.get(EnvVariables.TYPEORMCLI_MIGRATIONS_DIR),
   },
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
