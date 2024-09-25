@@ -2,7 +2,7 @@
 
 ## Descripción General
 
-`store-payment-backend` es un servicio backend construido con NestJS, diseñado para manejar el procesamiento de pagos en una plataforma de comercio electrónico. Utiliza TypeORM para las interacciones con la base de datos y proporciona una API robusta para gestionar pagos, usuarios y productos.
+`Shoppingify-back` es un servicio backend construido con NestJS. Utiliza TypeORM para las interacciones con la base de datos y proporciona una API robusta para gestionar productos, usuarios y carrito de compras.
 
 ## Características
 
@@ -35,11 +35,10 @@ Para comenzar con este proyecto, sigue las instrucciones a continuación:
 
 - Node.js (v16 o superior)
 - npm (v8 o superior)
-- [Entorno DEV](https://drive.google.com/drive/folders/1qYvME4A1AjxiqahVzYGhXz56ysQ3oxN_?usp=sharing)
 
 ### Instalación
 
-Para comenzar con la aplicación de Pago en Tienda, sigue estos pasos:
+Para comenzar con la aplicación, sigue estos pasos:
 
 1. **Clona el repositorio:**
 
@@ -70,4 +69,4 @@ Para comenzar con la aplicación de Pago en Tienda, sigue estos pasos:
 This project is currently located at the following URL.
 
 - **Railway server:**
-  - [Store payment](https://store-payment-production.up.railway.app/)
+  - [Shoppingify-back](https://shoppingify-back-production.up.railway.app/)
