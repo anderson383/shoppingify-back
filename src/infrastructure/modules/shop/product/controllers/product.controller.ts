@@ -27,7 +27,6 @@ export class ProductController {
 
   @Post()
   async save(@Body() createProduct: ProductCreateDto) {
-    console.log(createProduct, 'controller');
     return this._createProductHandler.execute(createProduct);
   }
 }

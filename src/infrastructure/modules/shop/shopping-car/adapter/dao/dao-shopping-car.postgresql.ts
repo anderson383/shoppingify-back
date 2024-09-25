@@ -30,8 +30,8 @@ export class DaoShoppingCarPostgresql implements DaoShoppingCar {
           `TO_CHAR(sp.create_date, 'Day dd.mm.YYYY') as datehistory`,
         ])
         .groupBy('sp.create_date, sp.id');
-
-      return filtered(await query.getRawMany());
+      const response = await query.getRawMany()
+      return filtered(response);
     } catch (e) {
       throw new Error(e);
     }

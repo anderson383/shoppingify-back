@@ -23,4 +23,7 @@ export const dataBaseConfigFactory = (configService: ConfigService) => ({
   ssl: {
     rejectUnauthorized: false,
   },
+  extra: {
+    charset: 'utf8',
+  },
 });
