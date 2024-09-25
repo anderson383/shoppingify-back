@@ -58,6 +58,7 @@ Para comenzar con la aplicación de Pago en Tienda, sigue estos pasos:
 
    ```bash
    npm run start:dev
+   run in port http://localhost:4000/
 5. **Execute build:**
    ```bash
    npm run build
